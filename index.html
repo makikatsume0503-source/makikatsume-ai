@@ -42,9 +42,10 @@
         <div class="container hero-content">
             <h2 class="hero-title">プロライターの「言語化」で、<br>攻めのDXを。</h2>
             <div class="hero-desc">
-                ツールを入れるだけでは終わらせない。<br>
-                元三菱UFJ銀行出身の<br>
-                貴社の課題に合わせた「動くAI活用」をオーダーメイドで伴走サポートします。
+                「AIを入れたものの、使いこなせていない」という課題を、<br>
+                プロライターの「言語化力」で解決します。<br>
+                業務プロセスの可視化から、現場が迷わず使える具体的なプロンプト作成まで。<br>
+                「明日から使えるAI」を、貴社の実務に合わせて構築します。
             </div>
             <a href="#contact" class="btn btn-primary hero-cta">【無料相談】お問い合わせ・資料請求はこちら</a>
         </div>
@@ -148,6 +149,24 @@
         </div>
     </section>
 
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <h3 class="section-title">実績・セミナー開催</h3>
+            <div class="achievement-list" style="max-width: 800px; margin: 0 auto; text-align: left;">
+                <div class="card" style="padding: 30px; border-left: 5px solid var(--color-gold);">
+                    <h4 style="font-size: 1.2rem; color: var(--color-navy); margin-bottom: 10px;">
+                        まなびやmom主催「集中伴走ワークショップ」講師担当</h4>
+                    <p style="margin-bottom: 15px;">女性起業家・経営者向けのDX・AI活用講座にて、メイン講師として登壇いたしました。</p>
+                    <a href="https://manabiyamom.com/post-19598/" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--color-gold); font-weight: bold; text-decoration: underline;">
+                        詳細なレポートはこちら（まなびやmom公式サイト）&rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Area & Profile Section -->
     <section id="profile" class="section">
         <div class="container">
@@ -175,8 +194,24 @@
         <div class="container text-center">
             <h2 class="footer-title">まずは無料相談から</h2>
             <p>貴社の課題をヒアリングし、AIで何ができるかをご提案します。<br>お気軽にお問い合わせください。</p>
-            <a href="#" class="btn btn-gold footer-cta">【無料相談】お問い合わせ・資料請求はこちら</a>
-            <p class="footer-note">※お問い合わせフォームへ移動します</p>
+
+            <div class="contact-form-wrapper">
+                <form action="https://formspree.io/f/mojnabgb" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">会社名 / お名前 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="例：株式会社○○ / 山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をご記入ください"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold form-submit">送信する</button>
+                </form>
+            </div>
 
             <div class="footer-copyright">
                 &copy; 2026 FinEdit. All Rights Reserved.
