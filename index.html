@@ -195,8 +195,23 @@
             <h2 class="footer-title">まずは無料相談から</h2>
             <p>貴社の課題をヒアリングし、AIで何ができるかをご提案します。<br>お気軽にお問い合わせください。</p>
 
-            <a href="#" class="btn btn-gold footer-cta">【無料相談】お問い合わせ・資料請求はこちら</a>
-            <p class="footer-note">※お問い合わせフォームへ移動します</p>
+            <div class="contact-form-wrapper">
+                <form action="https://formspree.io/f/mojnabgb" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">会社名 / お名前 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="例：株式会社○○ / 山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をご記入ください"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold form-submit">送信する</button>
+                </form>
+            </div>
 
             <div class="footer-copyright">
                 &copy; 2026 FinEdit. All Rights Reserved.
