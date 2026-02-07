@@ -400,25 +400,27 @@ img {
         flex-direction: column-reverse;
     }
 }
+
 /* Contact Form */
 .contact-form-wrapper {
-    max-width: 600px;
+    max-width: 800px;
     margin: 30px auto 40px;
     text-align: left;
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: var(--color-white);
+    font-size: 1.1rem;
 }
 
 .required {
@@ -429,11 +431,13 @@ img {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-sizing: border-box;
+    /* Ensure padding includes in width */
 }
 
 .form-group textarea {
@@ -443,8 +447,12 @@ img {
 .form-submit {
     display: block;
     width: 100%;
-    margin-top: 20px;
+    max-width: 400px;
+    margin: 30px auto 0;
+    padding: 15px;
     border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -452,4 +460,3 @@ img {
     background-color: var(--color-gold-hover);
     transform: translateY(-2px);
 }
-
