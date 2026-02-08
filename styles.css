@@ -253,7 +253,7 @@ img {
 /* Can Do Card */
 .can-do-card {
     background: white;
-    padding: 20px;
+    padding: 30px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -264,6 +264,24 @@ img {
 
 .can-do-card:hover {
     transform: translateY(-5px);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    margin-bottom: 15px;
+}
+
+.can-do-card h4 {
+    color: var(--color-navy);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.can-do-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
 }
 
 /* Problem Cards */
