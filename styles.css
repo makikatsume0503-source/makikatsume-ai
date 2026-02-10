@@ -502,3 +502,14 @@ img {
     background-color: var(--color-gold-hover);
     transform: translateY(-2px);
 }
+
+/* Utilities */
+.sp-br {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sp-br {
+        display: inline;
+    }
+}
