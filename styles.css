@@ -997,14 +997,18 @@ img {
     }
 
     .hero-split-container {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 40px;
+        display: block;
+        padding-top: 60px;
+        min-height: 70vh;
+        z-index: 2;
     }
 
     .hero-split-text {
         max-width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 0;
+        text-align: center;
+        position: relative;
+        z-index: 3;
     }
 
     .hero-badge {
@@ -1016,7 +1020,38 @@ img {
     }
 
     .hero-split-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
         justify-content: center;
+        overflow: hidden;
+    }
+
+    .hero-image-floating {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: none;
+        animation: none;
+        border: none;
+        opacity: 0.3;
+        /* Darken the image so white text is readable */
+    }
+
+    /* Add a dark gradient overlay on mobile to ensure text readability over the background image */
+    .hero-split::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.6) 100%);
+        z-index: 1;
     }
 }
 
