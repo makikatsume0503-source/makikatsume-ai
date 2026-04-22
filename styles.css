@@ -1068,3 +1068,18 @@ img {
         font-size: 1.4rem;
     }
 }
+
+/* Custom Hero Image Section */
+.hero-image-section {
+    width: 100%;
+    margin-top: 70px; /* Offset for fixed header */
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+
+.hero-image-fluid {
+    width: 100%;
+    height: auto;
+    display: block;
+}
