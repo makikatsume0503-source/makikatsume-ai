@@ -1080,7 +1080,7 @@ img {
 
 @media (max-width: 768px) {
     .hero-image-section {
-        padding-top: 25px; /* スマホ時のヘッダー直下の余白 */
+        padding-top: 55px; /* スマホ時のヘッダー直下の余白を増やす */
     }
 }
 
