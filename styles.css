@@ -1078,6 +1078,12 @@ img {
     background-color: var(--color-white);
 }
 
+@media (max-width: 768px) {
+    .hero-image-section {
+        padding-top: 25px; /* スマホ時のヘッダー直下の余白 */
+    }
+}
+
 .hero-image-fluid {
     width: 100%;
     height: auto;
