@@ -1095,7 +1095,7 @@ img {
 @media (max-width: 768px) {
     .hero-image-section {
         margin-top: 55px; /* マッチさせる */
-        padding-top: 40px; /* スマホ時のヘッダー直下の余白 */
+        padding-top: 15px; /* スマホ時のヘッダー直下の余白を縮小 */
     }
 }
 
