@@ -411,6 +411,19 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header-container {
+        height: 55px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.7rem;
+        margin-left: 5px;
+    }
+
     .nav {
         display: none;
     }
@@ -419,6 +432,7 @@ img {
 
     .mobile-menu-toggle {
         display: flex;
+        transform: scale(0.9);
     }
 
     .hero-title {
@@ -1080,7 +1094,8 @@ img {
 
 @media (max-width: 768px) {
     .hero-image-section {
-        padding-top: 55px; /* スマホ時のヘッダー直下の余白を増やす */
+        margin-top: 55px; /* マッチさせる */
+        padding-top: 40px; /* スマホ時のヘッダー直下の余白 */
     }
 }
 
