@@ -1104,3 +1104,146 @@ img {
     height: auto;
     display: block;
 }
+
+/* LP Messaging Refinement */
+.lp-message-section {
+    background: linear-gradient(135deg, var(--color-navy) 0%, #12284a 100%);
+    color: var(--color-white);
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lp-message-section::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.16), transparent 65%);
+}
+
+.lp-message-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--color-gold);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+}
+
+.lp-message-inner h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.45;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.lp-message-inner h2 span {
+    color: var(--color-gold);
+}
+
+.lead-copy {
+    color: #d7dde8;
+    font-size: 1.08rem;
+    line-height: 2;
+    margin: 0 auto 34px;
+    max-width: 720px;
+}
+
+.flow-grid {
+    align-items: stretch;
+}
+
+.flow-card {
+    background: var(--color-white);
+    padding: 32px 24px;
+    border-radius: 12px;
+    border-top: 4px solid var(--color-gold);
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.08);
+    height: 100%;
+}
+
+.flow-card span {
+    display: inline-block;
+    color: var(--color-gold);
+    font-weight: 700;
+    font-size: 0.86rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.flow-card h4 {
+    color: var(--color-navy);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.flow-card p {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.achievement-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.achievement-card {
+    padding: 30px;
+    border-left: 5px solid var(--color-gold);
+    margin-bottom: 20px;
+}
+
+.achievement-card h4 {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    margin-bottom: 15px;
+}
+
+.achievement-card a {
+    color: var(--color-gold);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn-navy {
+    background: var(--color-navy);
+    color: var(--color-white);
+}
+
+.btn-navy:hover {
+    background: var(--color-navy-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .lp-message-section {
+        padding: 56px 18px;
+    }
+
+    .lead-copy {
+        font-size: 1rem;
+        line-height: 1.9;
+    }
+
+    .flow-card {
+        padding: 28px 22px;
+    }
+
+    .nav-btn {
+        font-size: 0.85rem;
+    }
+}
