@@ -1247,3 +1247,78 @@ img {
         font-size: 0.85rem;
     }
 }
+
+/* ── Design Refinements ── */
+
+/* Section title: gold underline accent */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 3px;
+    background: var(--color-gold);
+    border-radius: 2px;
+    margin: 14px auto 0;
+}
+
+.section-title.text-left::after {
+    margin-left: 0;
+}
+
+/* btn-glossy: navy text for contrast */
+.btn-glossy {
+    color: var(--color-navy);
+}
+
+.btn-glossy:hover {
+    color: var(--color-navy);
+}
+
+/* Hero → lp-message seamless join */
+.lp-message-section {
+    margin-top: -4px;
+}
+
+/* Problem card: gold SVG strokes */
+.problem-card .icon svg {
+    stroke: var(--color-gold);
+}
+
+/* Strength card: icon above number */
+.strength-icon {
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    margin-bottom: 8px;
+}
+
+/* Flow grid: arrows between cards on desktop */
+.flow-grid {
+    position: relative;
+}
+
+.flow-card {
+    position: relative;
+}
+
+.flow-card:not(:last-child)::after {
+    content: '\f054';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gold);
+    font-size: 1rem;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .flow-card:not(:last-child)::after {
+        display: none;
+    }
+
+    .section-title::after {
+        width: 36px;
+    }
+}
