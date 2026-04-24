@@ -8,6 +8,7 @@
     --color-text: #333333;
     --color-text-light: #8892b0;
     --font-main: 'Noto Sans JP', sans-serif;
+    --font-heading: 'Shippori Mincho', serif;
 }
 
 * {
@@ -1246,6 +1247,17 @@ img {
     .nav-btn {
         font-size: 0.85rem;
     }
+}
+
+/* ── Heading Font (Shippori Mincho) ── */
+.section-title,
+.lp-message-inner h2,
+.footer-title,
+.strength-card h4,
+.flow-card h4,
+.service-item h4,
+.can-do-card h4 {
+    font-family: var(--font-heading);
 }
 
 /* ── Design Refinements ── */
