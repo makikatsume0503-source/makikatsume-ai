@@ -16,6 +16,75 @@
     <link rel="icon" href="assets/favicon.png?v=2" type="image/png">
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css?v=20260424a">
+    <style>
+        .hero-copy-line {
+            display: inline;
+        }
+
+        .hero-copy-white {
+            color: var(--color-white) !important;
+        }
+
+        .hero-copy-gold {
+            color: var(--color-gold) !important;
+        }
+
+        @media (max-width: 768px) {
+            .lp-message-section {
+                padding: 52px 18px 64px;
+            }
+
+            .lp-message-inner {
+                width: 100%;
+                max-width: 360px;
+                padding: 0 2px;
+            }
+
+            .eyebrow {
+                max-width: 320px;
+                margin: 0 auto 26px;
+                font-size: 1.02rem;
+                line-height: 1.75;
+                letter-spacing: 0.06em;
+            }
+
+            .lp-message-inner h2 {
+                font-size: clamp(2.35rem, 10.8vw, 2.85rem);
+                line-height: 1.48;
+                letter-spacing: 0.02em;
+                margin-bottom: 28px;
+            }
+
+            .hero-copy-line {
+                display: block;
+                white-space: nowrap;
+            }
+
+            .lead-copy {
+                max-width: 330px;
+                font-size: 1.04rem;
+                line-height: 2.05;
+                margin-bottom: 34px;
+            }
+
+            .lp-message-section .btn-glossy {
+                width: min(100%, 320px);
+                padding: 18px 24px;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .lp-message-inner h2 {
+                font-size: 2.28rem;
+            }
+
+            .lp-message-section .btn-glossy {
+                width: min(100%, 305px);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -54,8 +123,10 @@
         <div class="container lp-message-inner">
             <p class="eyebrow">名古屋の中小企業・ひとり社長・女性起業家向け</p>
             <h2>
-                AIを、使える知識から<br>
-                <span>「仕事が回る仕組み」へ。</span>
+                <span class="hero-copy-line hero-copy-white">AIを、使える知識</span>
+                <span class="hero-copy-line hero-copy-white">から</span>
+                <span class="hero-copy-line hero-copy-gold">「仕事が回る</span>
+                <span class="hero-copy-line hero-copy-gold">仕組み」へ。</span>
             </h2>
             <p class="lead-copy">
                 AI活用インストラクターとして、ChatGPT・Gemini・Claudeなどを実務に落とし込み、ホームページ・業務フロー・SNS発信まで一緒に整える伴走支援です。
