@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>営業資料｜FinEdit AI活用インストラクター 勝目麻希</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0a192f;
+            --navy-light: #172a45;
+            --gold: #d4af37;
+            --gold-light: #e8c84a;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+            --text: #333333;
+            --text-light: #8892b0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #111;
+            color: var(--text);
+        }
+
+        /* ---- Nav dots ---- */
+        .nav-dots {
+            position: fixed;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+        .nav-dots a {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.35);
+            display: block;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .nav-dots a.active,
+        .nav-dots a:hover { background: var(--gold); transform: scale(1.3); }
+
+        /* ---- Slides ---- */
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-inner {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* slide number badge */
+        .slide-num {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        /* ---- 01 Cover ---- */
+        #s1 {
+            background: var(--navy);
+            flex-direction: column;
+            text-align: center;
+        }
+        #s1::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(212,175,55,0.08) 0%, transparent 65%),
+                        radial-gradient(ellipse at 70% 70%, rgba(212,175,55,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cover-eyebrow {
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            color: var(--gold);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+        .cover-title {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.45;
+            margin-bottom: 28px;
+            letter-spacing: 0.04em;
+        }
+        .cover-title em {
+            font-style: normal;
+            color: var(--gold);
+        }
+        .cover-sub {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.9;
+            max-width: 560px;
+            margin: 0 auto 36px;
+        }
+        .cover-tag {
+            display: inline-block;
+            border: 1px solid rgba(212,175,55,0.4);
+            color: var(--gold);
+            font-size: 0.82rem;
+            padding: 6px 18px;
+            border-radius: 100px;
+            letter-spacing: 0.12em;
+        }
+        .cover-brand {
+            margin-top: 48px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+        }
+        .cover-brand strong { color: var(--gold); }
+
+        /* ---- 02 Problems ---- */
+        #s2 { background: var(--gray); }
+        .section-label {
+            font-size: 0.78rem;
+            letter-spacing: 0.22em;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .section-heading {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.45;
+            margin-bottom: 44px;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .problem-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px 24px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .problem-card .p-icon {
+            width: 48px; height: 48px;
+            background: rgba(212,175,55,0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+        .problem-card p { font-size: 0.97rem; line-height: 1.75; color: var(--text); font-weight: 500; }
+
+        /* ---- 03 Strengths ---- */
+        #s3 { background: var(--navy); }
+        #s3 .section-heading { color: var(--white); }
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .strength-card {
+            background: var(--navy-light);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 12px;
+            padding: 30px 24px;
+        }
+        .strength-num {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: rgba(212,175,55,0.25);
+            line-height: 1;
+            margin-bottom: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+        .strength-card h4 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .strength-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+        /* ---- 04 Can-Do ---- */
+        #s4 { background: var(--white); }
+        .cando-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .cando-card {
+            border: 1px solid #e8ecf1;
+            border-radius: 12px;
+            padding: 24px 20px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .cando-icon {
+            width: 42px; height: 42px; flex-shrink: 0;
+            background: rgba(10,25,47,0.07);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+        .cando-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .cando-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; }
+
+        /* ---- 05 Services ---- */
+        #s5 { background: var(--navy); }
+        #s5 .section-heading { color: var(--white); }
+        .service-list { display: flex; flex-direction: column; gap: 18px; }
+        .service-item {
+            background: var(--navy-light);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+            padding: 22px 26px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+        .service-item .s-num {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gold);
+            opacity: 0.5;
+            min-width: 36px;
+        }
+        .service-item h4 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+        .service-item p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+        /* ---- 06 Flow ---- */
+        #s6 { background: var(--gray); }
+        .flow-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0;
+            position: relative;
+        }
+        .flow-list::after {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+            z-index: 0;
+        }
+        .flow-item {
+            text-align: center;
+            padding: 24px 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .flow-circle {
+            width: 72px; height: 72px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            margin: 0 auto 18px;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 0 6px var(--gray);
+        }
+        .flow-circle .step-label { font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; font-weight: 700; }
+        .flow-circle .step-num { font-size: 1.3rem; font-weight: 900; color: var(--white); line-height: 1; }
+        .flow-item h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .flow-item p { font-size: 0.82rem; color: var(--text-light); line-height: 1.7; }
+
+        /* ---- 07 Achievements ---- */
+        #s7 { background: var(--white); }
+        .ach-list { display: flex; flex-direction: column; gap: 18px; }
+        .ach-card {
+            border-left: 4px solid var(--gold);
+            padding: 20px 24px;
+            background: var(--gray);
+            border-radius: 0 10px 10px 0;
+        }
+        .ach-card .ach-date { font-size: 0.78rem; color: var(--text-light); margin-bottom: 6px; letter-spacing: 0.05em; }
+        .ach-card h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .ach-card p { font-size: 0.87rem; color: var(--text); line-height: 1.7; }
+
+        /* ---- 08 Profile ---- */
+        #s8 { background: var(--navy); }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .profile-img-wrap {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(212,175,55,0.2);
+        }
+        .profile-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-text .profile-name {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        .profile-text .profile-role {
+            font-size: 0.88rem;
+            color: var(--gold);
+            margin-bottom: 22px;
+            letter-spacing: 0.06em;
+        }
+        .profile-text p { font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.9; margin-bottom: 20px; }
+        .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .profile-tag {
+            border: 1px solid rgba(212,175,55,0.4);
+            color: var(--gold);
+            font-size: 0.78rem;
+            padding: 4px 14px;
+            border-radius: 100px;
+        }
+
+        /* ---- 09 CTA ---- */
+        #s9 {
+            background: var(--navy);
+            text-align: center;
+            flex-direction: column;
+        }
+        #s9::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-heading {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .cta-heading em { font-style: normal; color: var(--gold); }
+        .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.9; margin-bottom: 40px; }
+        .cta-box {
+            background: var(--navy-light);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 16px;
+            padding: 36px 40px;
+            max-width: 580px;
+            margin: 0 auto 36px;
+            text-align: left;
+        }
+        .cta-box h4 { font-size: 1rem; color: var(--gold); margin-bottom: 16px; font-weight: 700; letter-spacing: 0.06em; }
+        .cta-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .cta-box ul li { font-size: 0.92rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 10px; }
+        .cta-box ul li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, #c9952a 100%);
+            color: var(--navy);
+            font-weight: 900;
+            font-size: 1.05rem;
+            padding: 18px 48px;
+            border-radius: 100px;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+        }
+        .btn-cta:hover { opacity: 0.9; transform: translateY(-2px); }
+        .cta-url { margin-top: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+
+        /* ---- print ---- */
+        @media print {
+            .nav-dots { display: none; }
+            .slide {
+                min-height: auto;
+                height: 297mm;
+                width: 210mm;
+                page-break-after: always;
+                padding: 40px 36px;
+            }
+            body { background: white; }
+            .flow-list::after { display: none; }
+        }
+
+        /* ---- responsive ---- */
+        @media (max-width: 700px) {
+            .slide { padding: 48px 20px; }
+            .profile-grid { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+            .profile-tags { justify-content: center; }
+            .flow-list::after { display: none; }
+            .service-item { grid-template-columns: 1fr; gap: 8px; }
+            .service-item .s-num { font-size: 1.1rem; }
+            .nav-dots { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav dots -->
+<nav class="nav-dots" aria-label="スライドナビ">
+    <a href="#s1" title="表紙"></a>
+    <a href="#s2" title="課題"></a>
+    <a href="#s3" title="強み"></a>
+    <a href="#s4" title="できること"></a>
+    <a href="#s5" title="サービス"></a>
+    <a href="#s6" title="流れ"></a>
+    <a href="#s7" title="実績"></a>
+    <a href="#s8" title="プロフィール"></a>
+    <a href="#s9" title="お問い合わせ"></a>
+</nav>
+
+<!-- 01 Cover -->
+<section class="slide" id="s1">
+    <div class="slide-inner">
+        <p class="cover-eyebrow">名古屋の経営者・起業家向け AI活用支援</p>
+        <h1 class="cover-title">
+            AIを、<br>
+            使える知識から<br>
+            <em>「仕事が回る仕組み」へ。</em>
+        </h1>
+        <p class="cover-sub">
+            ChatGPT・Gemini・Claudeなどを実務に落とし込み、<br>
+            ホームページ・業務フロー・SNS発信まで<br>
+            一緒に整える伴走支援です。
+        </p>
+        <span class="cover-tag">AI活用インストラクター / 実装パートナー</span>
+        <p class="cover-brand">FinEdit &nbsp;|&nbsp; <strong>勝目 麻希</strong></p>
+    </div>
+</section>
+
+<!-- 02 Problems -->
+<section class="slide" id="s2">
+    <div class="slide-inner">
+        <p class="section-label">Problem</p>
+        <h2 class="section-heading">こんなお悩みは<br>ありませんか？</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-circle-question"></i></div>
+                <p>ChatGPTを使ってみたが、<br>仕事の成果につながっていない</p>
+            </div>
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-users"></i></div>
+                <p>どの業務にAIを使えばよいか、<br>社内で判断できる人がいない</p>
+            </div>
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <p>情報漏洩やセキュリティが不安で、<br>社内導入に踏み切れない</p>
+            </div>
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-clock"></i></div>
+                <p>AI研修を受けたが、<br>日常業務に定着していない</p>
+            </div>
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <p>ホームページを作りたいが、<br>何から始めればいいかわからない</p>
+            </div>
+            <div class="problem-card">
+                <div class="p-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <p>SNSや情報発信を始めたいが、<br>継続できる仕組みがない</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 Strengths -->
+<section class="slide" id="s3">
+    <div class="slide-inner">
+        <p class="section-label">Our Strengths</p>
+        <h2 class="section-heading">FinEditが選ばれる<br>3つの理由</h2>
+        <div class="strength-grid">
+            <div class="strength-card">
+                <div class="strength-num">01</div>
+                <h4>整える力</h4>
+                <p>元銀行員としての視点で、業務・数字・リスクを整理。安全で現実的なAI活用の入口を設計します。</p>
+            </div>
+            <div class="strength-card">
+                <div class="strength-num">02</div>
+                <h4>伝える力</h4>
+                <p>金融・ビジネス領域のプロライターとして、事業の魅力や提供価値をわかりやすい言葉に変換します。</p>
+            </div>
+            <div class="strength-card">
+                <div class="strength-num">03</div>
+                <h4>形にする力</h4>
+                <p>講座で終わらせず、LP・業務フロー・SNS導線・実務プロンプトまで、使える形に落とし込みます。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 Can-Do -->
+<section class="slide" id="s4">
+    <div class="slide-inner">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-heading">一緒に整えられるもの</h2>
+        <div class="cando-grid">
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <div>
+                    <h4>サービスLP・ホームページ</h4>
+                    <p>構成、文章、デザイン、コード生成まで一気通貫で整えます。</p>
+                </div>
+            </div>
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <div>
+                    <h4>業務フロー・マニュアル</h4>
+                    <p>属人化した業務を可視化し、誰でも回せる形に整理します。</p>
+                </div>
+            </div>
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <div>
+                    <h4>SNS・発信設計</h4>
+                    <p>投稿ネタ、構成、文章、プロフィール、導線をAIで仕組み化します。</p>
+                </div>
+            </div>
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-gears"></i></div>
+                <div>
+                    <h4>AI活用の仕組み化</h4>
+                    <p>AI活用の型・手順・テンプレートを整え、社内で再現できる仕組みにします。</p>
+                </div>
+            </div>
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                <div>
+                    <h4>簡易業務アプリ</h4>
+                    <p>顧客管理、日報、教材など小さく使えるツールづくりを支援します。</p>
+                </div>
+            </div>
+            <div class="cando-card">
+                <div class="cando-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <div>
+                    <h4>企画書・提案資料</h4>
+                    <p>事業の強みを整理し、伝わる資料や営業導線に落とし込みます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 Services -->
+<section class="slide" id="s5">
+    <div class="slide-inner">
+        <p class="section-label">Services</p>
+        <h2 class="section-heading">サービス内容</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <span class="s-num">01</span>
+                <div>
+                    <h4>AIホームページ・LP制作支援</h4>
+                    <p>事業内容を整理し、集客導線まで考えたホームページ・LPをAIと一緒に形にします。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="s-num">02</span>
+                <div>
+                    <h4>業務フロー整理・AI活用設計</h4>
+                    <p>繰り返し業務や属人化している作業を可視化し、AIで効率化できる形へ落とし込みます。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="s-num">03</span>
+                <div>
+                    <h4>SNS・発信サポート</h4>
+                    <p>投稿ネタ、構成、文章、プロフィール、サービス導線まで発信全体を整えます。</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <span class="s-num">04</span>
+                <div>
+                    <h4>AI活用研修・ワークショップ</h4>
+                    <p>AI未経験の方にもわかりやすく、当日から使えるプロンプトと運用ルールを設計します。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 Flow -->
+<section class="slide" id="s6">
+    <div class="slide-inner">
+        <p class="section-label">Process</p>
+        <h2 class="section-heading">ご相談の流れ</h2>
+        <div class="flow-list">
+            <div class="flow-item">
+                <div class="flow-circle">
+                    <span class="step-label">STEP</span>
+                    <span class="step-num">1</span>
+                </div>
+                <h4>無料相談</h4>
+                <p>現状の課題や作りたいものをヒアリングします。</p>
+            </div>
+            <div class="flow-item">
+                <div class="flow-circle">
+                    <span class="step-label">STEP</span>
+                    <span class="step-num">2</span>
+                </div>
+                <h4>整理</h4>
+                <p>業務・発信・導線を可視化し、優先順位を決めます。</p>
+            </div>
+            <div class="flow-item">
+                <div class="flow-circle">
+                    <span class="step-label">STEP</span>
+                    <span class="step-num">3</span>
+                </div>
+                <h4>設計</h4>
+                <p>AIで何を効率化・制作するかを具体化します。</p>
+            </div>
+            <div class="flow-item">
+                <div class="flow-circle">
+                    <span class="step-label">STEP</span>
+                    <span class="step-num">4</span>
+                </div>
+                <h4>実装</h4>
+                <p>ホームページ・業務フロー・SNS導線などを形にします。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 Achievements -->
+<section class="slide" id="s7">
+    <div class="slide-inner">
+        <p class="section-label">Track Record</p>
+        <h2 class="section-heading">実績・登壇歴</h2>
+        <div class="ach-list">
+            <div class="ach-card">
+                <p class="ach-date">2026年4月24日</p>
+                <h4>NAGOYA CONNÉCT &mdash; モデレーター登壇</h4>
+                <p>名古屋の女性コミュニティイベントにてモデレーターを務め、地方における男女収入格差とAI活用による選択肢の広がりをテーマに発信。</p>
+            </div>
+            <div class="ach-card">
+                <p class="ach-date">2026年2月1日</p>
+                <h4>学び舎mom株式会社主催「集中伴走ワークショップ」&mdash; メイン講師</h4>
+                <p>女性起業家・経営者向けのDX・AI活用講座にて、メイン講師として登壇。実務で使えるAI活用の手順と型を指導。</p>
+            </div>
+            <div class="ach-card">
+                <p class="ach-date">2025年2月・3月</p>
+                <h4>一般社団法人 日本小児発達子育て支援協会「VARY」&mdash; セミナー講師</h4>
+                <p>オンラインコミュニティ「VARY」にて、AIを活用した教材・アプリづくりをレクチャー。2回にわたり登壇。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 08 Profile -->
+<section class="slide" id="s8">
+    <div class="slide-inner">
+        <p class="section-label">Profile</p>
+        <div class="profile-grid">
+            <div>
+                <div class="profile-img-wrap">
+                    <img src="assets/profile.jpg" alt="勝目麻希">
+                </div>
+            </div>
+            <div class="profile-text">
+                <p class="profile-name">勝目 麻希</p>
+                <p class="profile-role">AI活用インストラクター / プロライター</p>
+                <p>
+                    愛知県名古屋市を拠点に、中小企業・ひとり社長のAI活用を伴走支援。元銀行員としての実務経験と、金融・ビジネス領域のライターとして培った言語化スキルを活かし、安全かつ実践的なAI活用を支援。
+                </p>
+                <p>
+                    「難しいことをわかりやすく、仕事で使える形にする」ことを大切に、オンライン・対面ともに対応。名古屋・東海エリアの経営者の「身近な相談相手」として活動中。
+                </p>
+                <div class="profile-tags">
+                    <span class="profile-tag">元銀行員</span>
+                    <span class="profile-tag">プロライター</span>
+                    <span class="profile-tag">AI活用インストラクター</span>
+                    <span class="profile-tag">名古屋拠点</span>
+                    <span class="profile-tag">オンライン対応可</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 09 CTA -->
+<section class="slide" id="s9">
+    <div class="slide-inner" style="text-align:center;">
+        <p class="section-label">Contact</p>
+        <h2 class="cta-heading">
+            まずは<em>無料相談</em>から。<br>
+            一緒に整えましょう。
+        </h2>
+        <p class="cta-sub">
+            ホームページ制作、業務フロー整理、SNS発信、AI研修など、<br>
+            今の課題に合わせてご提案します。
+        </p>
+        <div class="cta-box">
+            <h4>無料相談でできること</h4>
+            <ul>
+                <li>現在の課題・やりたいことのヒアリング</li>
+                <li>AIで効率化できそうな業務の棚卸し</li>
+                <li>最初の一歩となる具体的なアクション提案</li>
+                <li>サービス内容・費用感のご案内</li>
+            </ul>
+        </div>
+        <a href="https://makikatsume-ai.com/#contact" class="btn-cta">無料相談を申し込む</a>
+        <p class="cta-url">https://makikatsume-ai.com/</p>
+    </div>
+</section>
+
+<script>
+    const dots = document.querySelectorAll('.nav-dots a');
+    const slides = document.querySelectorAll('.slide');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                dots.forEach(d => {
+                    d.classList.toggle('active', d.getAttribute('href') === '#' + id);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    slides.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
